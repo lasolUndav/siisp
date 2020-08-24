@@ -73,13 +73,31 @@ export class Investigacion{
   }
 }
 
+export class CargoDocente{
+  tipo: string;
+  dedicacion: string;
+  radicacion: string;
+  tipoContratacion: string;
+  constructor(tipo: string, dedicacion: string, radicacion: string, tipoContratacion: string){
+    this.tipo = tipo;
+    this.dedicacion = dedicacion;
+    this.radicacion = radicacion; 
+    this.tipoContratacion = tipoContratacion;
+  }
+}
+
 export class TrabajadorUniversidad{
   persona: Persona;
   formacion: Formacion;
   investigacion: Investigacion;
-  constructor(persona: Persona, formacion: Formacion, investigacion: Investigacion){
+  cargosDocentes: Array<CargoDocente>;
+  observaciones: string;
+  constructor(persona: Persona, formacion: Formacion, investigacion: Investigacion,
+              cargosDocentes: Array<CargoDocente>, observaciones: string){
     this.persona = persona;
     this.formacion = formacion;
     this.investigacion = investigacion;
+    this.cargosDocentes = cargosDocentes;
+    this.observaciones = observaciones;
   }
 }
