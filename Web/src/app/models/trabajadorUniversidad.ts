@@ -21,9 +21,33 @@ export class Persona{
   }
 }
 
+export class Titulacion{
+  tipo: string;
+  nombre: string;
+  disciplina: string;
+  constructor(tipo: string, nombre: string, disciplina: string){
+   this.disciplina = disciplina;
+   this.nombre = nombre;
+   this.disciplina = disciplina;
+  }
+}
+
+export class Formacion{
+  area: string;
+  disciplina: string;
+  titulos: Array<Titulacion>;
+  constructor(area: string, disciplina: string, titulos: Array<Titulacion>){
+    this.area = area;
+    this.disciplina = disciplina;
+    this.titulos = titulos;
+  }
+}
+
 export class TrabajadorUniversidad{
   persona: Persona;
-  constructor(persona: Persona){
+  formacion: Formacion;
+  constructor(persona: Persona, formacion: Formacion){
     this.persona = persona;
+    this.formacion = formacion;
   }
 }
