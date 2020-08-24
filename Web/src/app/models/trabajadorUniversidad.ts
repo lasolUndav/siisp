@@ -43,11 +43,43 @@ export class Formacion{
   }
 }
 
+export class Beca{
+  tipo: string;
+  organismoOtorgante: string;
+  carreraDesarrollada: string;
+  fechaIniciacion: Date;
+  fechaFinalizacion: Date;
+  constructor(tipo: string, organismoOtorgante: string, carreraDesarrollada: string, fechaIniciacion: Date, fechaFinalizacion: Date){
+    this.tipo = tipo;
+    this.organismoOtorgante = organismoOtorgante;
+    this.carreraDesarrollada = carreraDesarrollada;
+    this.fechaIniciacion = fechaIniciacion;
+    this.fechaFinalizacion = fechaFinalizacion;
+  }
+}
+
+export class Investigacion{
+  disciplina: string;
+  areaAplicacion: string;
+  organismoCategorizacion: string;
+  categoria: string;
+  becas: Array<Beca>;
+  constructor(disciplina: string, areaAplicacion: string, organismoCategorizacion: string, categoria: string, becas: Array<Beca>){
+    this.disciplina = disciplina;
+    this.areaAplicacion = areaAplicacion;
+    this.organismoCategorizacion = organismoCategorizacion;
+    this.categoria = categoria;
+    this.becas = becas;
+  }
+}
+
 export class TrabajadorUniversidad{
   persona: Persona;
   formacion: Formacion;
-  constructor(persona: Persona, formacion: Formacion){
+  investigacion: Investigacion;
+  constructor(persona: Persona, formacion: Formacion, investigacion: Investigacion){
     this.persona = persona;
     this.formacion = formacion;
+    this.investigacion = investigacion;
   }
 }
