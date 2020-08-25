@@ -1,0 +1,419 @@
+<h3 class="bg-primary text-white p-3">Alta de docentes e investigadores</h3>
+<form>
+  <h4>Datos personales</h4>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label>Apellido</label>
+      <input class="form-control"/>
+    </div>
+    <div class="form-group col-md-5">
+      <label>Nombres</label>
+      <input class="form-control"/>
+    </div>
+    <div class="form-group col-md-2">
+      <label>Género</label>
+      <select class="form-control">
+        <option value="F">Femenino</option>
+        <option value="M">Masculino</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label>Documento</label>
+      <input class="form-control"/>
+    </div>
+    <div class="form-group col-md-5">
+      <label>Email</label>
+      <input class="form-control"/>
+    </div>
+    <div class="form-group col-md-2">
+      <label>Fecha de nacimiento</label>
+      <input type="date" class="form-control"/>
+    </div>
+  </div>
+  <h4>Formación</h4>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Area</label>
+      <select class="form-control">
+        <option value="Ciencias_Exactas_y_Naturales">Ciencias_Exactas_y_Naturales</option>
+        <option value="Ingenierías_y_Tecnologías">Ingenierías_y_Tecnologías</option>
+        <option value="Ciencias_Médicas">Ciencias_Médicas</option>
+        <option value="Ciencias_Agrícolas">Ciencias_Agrícolas</option>
+        <option value="Ciencias_Sociales">Ciencias_Sociales</option>
+        <option value="Humanidades">Humanidades</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Disciplina</label>
+      <select class="form-control">
+        <option value="Biólogos">Biólogos</option>
+        <option value="Físicos">Físicos</option>
+        <option value="Geólogos">Geólogos</option>
+        <option value="Matemáticos">Matemáticos</option>
+        <option value="Químicos">Químicos</option>
+        <option value="Ciencias de la Computación">Ciencias de la Computación</option>
+        <option value="Arquitectos">Arquitectos</option>
+        <option value="Ingenieros (civil, industria, informático)">Ingenieros (civil, industria, informático)</option>
+        <option value="Diseñadores  (textil, industrial, civil)">Diseñadores  (textil, industrial, civil)</option>
+        <option value="Bioquímicos ">Bioquímicos </option>
+        <option value="Farmacéuticos">Farmacéuticos</option>
+        <option value="Médicos">Médicos</option>
+        <option value="Enfermero Universitario">Enfermero Universitario</option>
+        <option value="Ingenieros Agrónomos">Ingenieros Agrónomos</option>
+        <option value="Veterinarios">Veterinarios</option>
+        <option value="Abogados">Abogados</option>
+        <option value="Antropólogos">Antropólogos</option>
+        <option value="Economistas">Economistas</option>
+        <option value="Ciencias de la Educación">Ciencias de la Educación</option>
+        <option value="Psicólogos">Psicólogos</option>
+        <option value="Sociólogos">Sociólogos</option>
+        <option value="Ciencia Política">Ciencia Política</option>
+        <option value="Comunicación">Comunicación</option>
+        <option value="Periodismo">Periodismo</option>
+        <option value="Turismo">Turismo</option>
+        <option value="Trabajo Social">Trabajo Social</option>
+        <option value="Edición">Edición</option>
+        <option value="Relaciones Laborales">Relaciones Laborales</option>
+        <option value="Filósofos">Filósofos</option>
+        <option value="Historiadores">Historiadores</option>
+        <option value="Lingüistas">Lingüistas</option>
+        <option value="Literatos">Literatos</option>
+        <option value="Artes Visuales y/o Audiovisuales">Artes Visuales y/o Audiovisuales</option>
+        <option value="Otros">Otros</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <label>Títulos</label>
+    <div class="p-3">
+      <table class="table table-stripped table-bordered">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Titulación</th>
+            <th>Disciplina</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Grado</td><td>Ingeniero</td><td>Ingenieros (civil, industria, informático)</td></tr>
+        </tbody>
+      </table>
+      <div class="form-row">
+        <label class="col-sm-1 col-form-label">Título de grado</label>
+        <div class="col-sm-3">
+          <select class="form-control" placeholder="Título de grado">
+            <option value="PROFESOR">PROFESOR</option>
+            <option value="PROFESOR">LICENCIADO</option>
+            <option value="INGENIERO">INGENIERO</option>
+            <option value="ARQUITECTO">ARQUITECTO</option>
+            <option value="ABOGADO">ABOGADO</option>
+            <option value="MEDICO">MEDICO</option>
+            <option value="CONTADOR">CONTADOR</option>
+          </select>
+        </div>
+        <label class="col-sm-1 col-form-label">Disciplina</label>
+        <div class="col-sm-5">
+          <select class="form-control" placeholder="Disciplina">
+            <option value="Biólogos">Biólogos</option>
+            <option value="Físicos">Físicos</option>
+            <option value="Geólogos">Geólogos</option>
+            <option value="Matemáticos">Matemáticos</option>
+            <option value="Químicos">Químicos</option>
+            <option value="Ciencias de la Computación">Ciencias de la Computación</option>
+            <option value="Arquitectos">Arquitectos</option>
+            <option value="Ingenieros (civil, industria, informático)">Ingenieros (civil, industria, informático)</option>
+            <option value="Diseñadores  (textil, industrial, civil)">Diseñadores  (textil, industrial, civil)</option>
+            <option value="Bioquímicos ">Bioquímicos </option>
+            <option value="Farmacéuticos">Farmacéuticos</option>
+            <option value="Médicos">Médicos</option>
+            <option value="Enfermero Universitario">Enfermero Universitario</option>
+            <option value="Ingenieros Agrónomos">Ingenieros Agrónomos</option>
+            <option value="Veterinarios">Veterinarios</option>
+            <option value="Abogados">Abogados</option>
+            <option value="Antropólogos">Antropólogos</option>
+            <option value="Economistas">Economistas</option>
+            <option value="Ciencias de la Educación">Ciencias de la Educación</option>
+            <option value="Psicólogos">Psicólogos</option>
+            <option value="Sociólogos">Sociólogos</option>
+            <option value="Ciencia Política">Ciencia Política</option>
+            <option value="Comunicación">Comunicación</option>
+            <option value="Periodismo">Periodismo</option>
+            <option value="Turismo">Turismo</option>
+            <option value="Trabajo Social">Trabajo Social</option>
+            <option value="Edición">Edición</option>
+            <option value="Relaciones Laborales">Relaciones Laborales</option>
+            <option value="Filósofos">Filósofos</option>
+            <option value="Historiadores">Historiadores</option>
+            <option value="Lingüistas">Lingüistas</option>
+            <option value="Literatos">Literatos</option>
+            <option value="Artes Visuales y/o Audiovisuales">Artes Visuales y/o Audiovisuales</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-secondary mt-1">Agregar Titulo de Grado</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="col-sm-1 col-form-label">Título de posgrado</label>
+        <div class="col-sm-3">
+          <select class="form-control" placeholder="Título de posgrado">
+            <option value="ESPECIALISTA">ESPECIALISTA</option>
+            <option value="MASTER">MASTER</option>
+            <option value="MAGISTER">MAGISTER</option>
+            <option value="DOCTOR">DOCTOR</option>
+          </select>
+        </div>
+        <label class="col-sm-1 col-form-label">Disciplina</label>
+        <div class="col-sm-5">
+          <select class="form-control" placeholder="Disciplina">
+            <option value="Biólogos">Biólogos</option>
+            <option value="Físicos">Físicos</option>
+            <option value="Geólogos">Geólogos</option>
+            <option value="Matemáticos">Matemáticos</option>
+            <option value="Químicos">Químicos</option>
+            <option value="Ciencias de la Computación">Ciencias de la Computación</option>
+            <option value="Arquitectos">Arquitectos</option>
+            <option value="Ingenieros (civil, industria, informático)">Ingenieros (civil, industria, informático)</option>
+            <option value="Diseñadores  (textil, industrial, civil)">Diseñadores  (textil, industrial, civil)</option>
+            <option value="Bioquímicos ">Bioquímicos </option>
+            <option value="Farmacéuticos">Farmacéuticos</option>
+            <option value="Médicos">Médicos</option>
+            <option value="Enfermero Universitario">Enfermero Universitario</option>
+            <option value="Ingenieros Agrónomos">Ingenieros Agrónomos</option>
+            <option value="Veterinarios">Veterinarios</option>
+            <option value="Abogados">Abogados</option>
+            <option value="Antropólogos">Antropólogos</option>
+            <option value="Economistas">Economistas</option>
+            <option value="Ciencias de la Educación">Ciencias de la Educación</option>
+            <option value="Psicólogos">Psicólogos</option>
+            <option value="Sociólogos">Sociólogos</option>
+            <option value="Ciencia Política">Ciencia Política</option>
+            <option value="Comunicación">Comunicación</option>
+            <option value="Periodismo">Periodismo</option>
+            <option value="Turismo">Turismo</option>
+            <option value="Trabajo Social">Trabajo Social</option>
+            <option value="Edición">Edición</option>
+            <option value="Relaciones Laborales">Relaciones Laborales</option>
+            <option value="Filósofos">Filósofos</option>
+            <option value="Historiadores">Historiadores</option>
+            <option value="Lingüistas">Lingüistas</option>
+            <option value="Literatos">Literatos</option>
+            <option value="Artes Visuales y/o Audiovisuales">Artes Visuales y/o Audiovisuales</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-secondary mt-1">Agregar Titulo de Posgrado</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <h4>Investigación</h4>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label>Area aplicación</label>
+      <select class="form-control">
+        <option value="Ciencias_Exactas_y_Naturales">Ciencias_Exactas_y_Naturales</option>
+        <option value="Ingenierías_y_Tecnologías">Ingenierías_y_Tecnologías</option>
+        <option value="Ciencias_Médicas">Ciencias_Médicas</option>
+        <option value="Ciencias_Agrícolas">Ciencias_Agrícolas</option>
+        <option value="Ciencias_Sociales">Ciencias_Sociales</option>
+        <option value="Humanidades">Humanidades</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label>Disciplina</label>
+      <select class="form-control">
+        <option value="Biólogos">Biólogos</option>
+        <option value="Físicos">Físicos</option>
+        <option value="Geólogos">Geólogos</option>
+        <option value="Matemáticos">Matemáticos</option>
+        <option value="Químicos">Químicos</option>
+        <option value="Ciencias de la Computación">Ciencias de la Computación</option>
+        <option value="Arquitectos">Arquitectos</option>
+        <option value="Ingenieros (civil, industria, informático)">Ingenieros (civil, industria, informático)</option>
+        <option value="Diseñadores  (textil, industrial, civil)">Diseñadores  (textil, industrial, civil)</option>
+        <option value="Bioquímicos ">Bioquímicos </option>
+        <option value="Farmacéuticos">Farmacéuticos</option>
+        <option value="Médicos">Médicos</option>
+        <option value="Enfermero Universitario">Enfermero Universitario</option>
+        <option value="Ingenieros Agrónomos">Ingenieros Agrónomos</option>
+        <option value="Veterinarios">Veterinarios</option>
+        <option value="Abogados">Abogados</option>
+        <option value="Antropólogos">Antropólogos</option>
+        <option value="Economistas">Economistas</option>
+        <option value="Ciencias de la Educación">Ciencias de la Educación</option>
+        <option value="Psicólogos">Psicólogos</option>
+        <option value="Sociólogos">Sociólogos</option>
+        <option value="Ciencia Política">Ciencia Política</option>
+        <option value="Comunicación">Comunicación</option>
+        <option value="Periodismo">Periodismo</option>
+        <option value="Turismo">Turismo</option>
+        <option value="Trabajo Social">Trabajo Social</option>
+        <option value="Edición">Edición</option>
+        <option value="Relaciones Laborales">Relaciones Laborales</option>
+        <option value="Filósofos">Filósofos</option>
+        <option value="Historiadores">Historiadores</option>
+        <option value="Lingüistas">Lingüistas</option>
+        <option value="Literatos">Literatos</option>
+        <option value="Artes Visuales y/o Audiovisuales">Artes Visuales y/o Audiovisuales</option>
+        <option value="Otros">Otros</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label>Organismo Categorizacion</label>
+      <select class="form-control">
+        <option value="Incentivos">Incentivos</option>
+        <option value="CONICET">CONICET</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label>Categoria</label>
+      <select class="form-control">
+        <option value="I">I</option>
+        <option value="II">II</option>
+        <option value="III">III</option>
+        <option value="IV">IV</option>
+        <option value="V">V</option>
+        <option value="Superior">Superior</option>
+        <option value="Principal">Principal</option>
+        <option value="Independiente">Independiente</option>
+        <option value="Adjunto">Adjunto</option>
+        <option value="Asistente">Asistente</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <label>Becas</label>
+    <div class="p-3">
+      <table class="table table-stripped table-bordered">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Organismo otorgante</th>
+            <th>Carrera desarrollada</th>
+            <th>Fecha iniciación</th>
+            <th>Fecha finalización</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Posgrado</td><td>Otras</td><td>Maestria</td><td>10-06-2016</td><td>10-06-2020</td></tr>
+        </tbody>
+      </table>
+
+    <div class="form-row">
+      <label class="col-sm-2 col-form-label">Tipo Beca</label>
+      <div class="col-sm-2">
+        <select class="form-control">
+          <option value="Iniciación">Iniciación</option>
+          <option value="Posgrado">Posgrado</option>
+        </select>
+      </div>
+      <label class="col-sm-2 col-form-label">Organismo otorgante</label>
+      <div class="col-sm-2">
+        <select class="form-control" placeholder="Organismo otorgante">
+          <option value="CIN">CIN</option>
+          <option value="UNDAV">UNDAV</option>
+          <option value="CONICET">CONICET</option>
+          <option value="CONICET-UNDAV">CONICET-UNDAV</option>
+          <option value="UBA-UNDAV">UBA-UNDAV</option>
+          <option value="ANCPCYT">ANCPCYT</option>
+          <option value="CIC">CIC</option>
+          <option value="Otras">Otras</option>
+        </select>
+      </div>
+      <label class="col-sm-2 col-form-label">Carrera desarrollada</label>
+      <div class="col-sm-2">
+        <select class="form-control" placeholder="Carrera desarrollada">
+          <option value="Carrera de grado">Carrera de grado</option>
+          <option value="Especialización">Especialización</option>
+          <option value="Maestría">Maestría</option>
+          <option value="Doctorado">Doctorado</option>
+          <option value="Posdoctorado">Posdoctorado</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <label class="col-sm-2 col-form-label">Fecha iniciación</label>
+      <div class="col-sm-2">
+        <input type="date" class="form-control"/>
+      </div>
+      <label class="col-sm-2 col-form-label">Fecha finalización</label>
+      <div class="col-sm-2">
+        <input type="date" class="form-control"/>
+      </div>
+      <div class="col-sm-2">
+        <button class="btn btn-secondary mt-1">Agregar beca</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <h4>Docencia</h4>
+  <div>
+    <label>Cargos</label>
+    <div class="p-3">
+      <table class="table table-stripped table-bordered">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Dedicación</th>
+            <th>Radicación</th>
+            <th>Contratación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>JTP</td><td>Simple</td><td>Depto. Ambiente y Turismo</td><td>Contratado</td></tr>
+        </tbody>
+      </table>
+
+    <div class="form-row">
+      <label class="col-sm-1 col-form-label">Tipo</label>
+      <div class="col-sm-2">
+        <select class="form-control">
+          <option value="Ayudante Alumno">Ayudante Alumno</option>
+          <option value="Ayudante 1">Ayudante 1</option>
+          <option value="JTP">JTP</option>
+          <option value="Adjunto">Adjunto</option>
+          <option value="Asociado">Asociado</option>
+          <option value="Titular">Titular</option>
+        </select>
+      </div>
+      <label class="col-sm-2 col-form-label">Dedicacion</label>
+      <div class="col-sm-2">
+        <select class="form-control" placeholder="Dedicacion">
+          <option value="Simple">Simple</option>
+          <option value="Semiexclusiva">Semiexclusiva</option>
+          <option value="Exclusiva">Exclusiva</option>
+        </select>
+      </div>
+      <label class="col-sm-2 col-form-label">Radicacion</label>
+      <div class="col-sm-2">
+        <select class="form-control" placeholder="Radicacion">
+          <option value="Depto. Ambiente y Turismo">Depto. Ambiente y Turismo</option>
+          <option value="Depto. Salud y Actividad Física">Depto. Salud y Actividad Física</option>
+          <option value="Depto. Ciencias Sociales">Depto. Ciencias Sociales</option>
+          <option value="Depto. Humanidades y Artes">Depto. Humanidades y Artes</option>
+          <option value="Depto. Ingeniería y Tecnología">Depto. Ingeniería y Tecnología</option>
+          <option value="Depto. Arquitectura y Urbanismo">Depto. Arquitectura y Urbanismo</option>
+          <option value="Secretaría Académica">Secretaría Académica</option>
+          <option value="Otros">Otros</option>
+        </select>
+      </div>
+      <div class="col-sm-1">
+        <button class="btn btn-secondary mt-1">Agregar cargo</button>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-primary mt-1">Guardar</button>
+  </div>
+</form>
