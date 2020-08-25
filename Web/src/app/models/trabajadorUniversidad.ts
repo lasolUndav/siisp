@@ -3,9 +3,9 @@ export class Persona{
   nombres: string;
   genero: string;
   numeroDocumento: string;
-  fechaNacimiento: Date;
+  fechaNacimiento: string;
   email: string;
-  constructor(apellido: string, nombres: string, genero: string, numeroDocumento: string, fechaNacimiento: Date, email: string){
+  constructor(apellido: string, nombres: string, genero: string, numeroDocumento: string, fechaNacimiento: string, email: string){
     this.apellido = apellido;
     this.nombres = nombres;
     this.genero = genero;
@@ -15,7 +15,7 @@ export class Persona{
   }
 
   get Edad(): number{
-    const anioDiferencial = new Date(Date.now() - this.fechaNacimiento.getTime()).getUTCFullYear();
+    const anioDiferencial = new Date(Date.now() - new Date(this.fechaNacimiento).getTime()).getUTCFullYear();
     const anioBase = 1970;
     return Math.abs(anioDiferencial - anioBase);
   }
@@ -26,7 +26,7 @@ export class Titulacion{
   nombre: string;
   disciplina: string;
   constructor(tipo: string, nombre: string, disciplina: string){
-   this.disciplina = disciplina;
+   this.tipo = tipo;
    this.nombre = nombre;
    this.disciplina = disciplina;
   }
@@ -47,9 +47,9 @@ export class Beca{
   tipo: string;
   organismoOtorgante: string;
   carreraDesarrollada: string;
-  fechaIniciacion: Date;
-  fechaFinalizacion: Date;
-  constructor(tipo: string, organismoOtorgante: string, carreraDesarrollada: string, fechaIniciacion: Date, fechaFinalizacion: Date){
+  fechaIniciacion: string;
+  fechaFinalizacion: string;
+  constructor(tipo: string, organismoOtorgante: string, carreraDesarrollada: string, fechaIniciacion: string, fechaFinalizacion: string){
     this.tipo = tipo;
     this.organismoOtorgante = organismoOtorgante;
     this.carreraDesarrollada = carreraDesarrollada;
@@ -81,7 +81,7 @@ export class CargoDocente{
   constructor(tipo: string, dedicacion: string, radicacion: string, tipoContratacion: string){
     this.tipo = tipo;
     this.dedicacion = dedicacion;
-    this.radicacion = radicacion; 
+    this.radicacion = radicacion;
     this.tipoContratacion = tipoContratacion;
   }
 }

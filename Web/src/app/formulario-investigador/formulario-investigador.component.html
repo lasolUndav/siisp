@@ -1,18 +1,18 @@
 <h3 class="bg-primary text-white p-3">Alta de docentes e investigadores</h3>
-<form>
+<form *ngIf="investigador!=null" #form="ngForm">
   <h4>Datos personales</h4>
   <div class="form-row">
     <div class="form-group col-md-5">
       <label>Apellido</label>
-      <input class="form-control"/>
+      <input #apellido="ngModel" name="apellido" [(ngModel)]="investigador.persona.apellido" class="form-control"/>
     </div>
     <div class="form-group col-md-5">
       <label>Nombres</label>
-      <input class="form-control"/>
+      <input #nombres="ngModel" name="nombres" [(ngModel)]="investigador.persona.nombres" class="form-control"/>
     </div>
     <div class="form-group col-md-2">
       <label>Género</label>
-      <select class="form-control">
+      <select #genero="ngModel" name="genero" [(ngModel)]="investigador.persona.genero" class="form-control">
         <option value="F">Femenino</option>
         <option value="M">Masculino</option>
       </select>
@@ -21,22 +21,22 @@
   <div class="form-row">
     <div class="form-group col-md-5">
       <label>Documento</label>
-      <input class="form-control"/>
+      <input #numeroDocumento="ngModel" name="numeroDocumento" [(ngModel)]="investigador.persona.numeroDocumento" class="form-control"/>
     </div>
     <div class="form-group col-md-5">
       <label>Email</label>
-      <input class="form-control"/>
+      <input #email="ngModel" name="email" [(ngModel)]="investigador.persona.email" class="form-control"/>
     </div>
     <div class="form-group col-md-2">
       <label>Fecha de nacimiento</label>
-      <input type="date" class="form-control"/>
+      <input #fechaNacimiento="ngModel" name="fechaNacimiento" [(ngModel)]="investigador.persona.fechaNacimiento" type="date" class="form-control"/>
     </div>
   </div>
   <h4>Formación</h4>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label>Area</label>
-      <select class="form-control">
+      <select #areaFormacion="ngModel" name="areaFormacion" [(ngModel)]="investigador.formacion.area" class="form-control">
         <option value="Ciencias_Exactas_y_Naturales">Ciencias_Exactas_y_Naturales</option>
         <option value="Ingenierías_y_Tecnologías">Ingenierías_y_Tecnologías</option>
         <option value="Ciencias_Médicas">Ciencias_Médicas</option>
@@ -47,7 +47,7 @@
     </div>
     <div class="form-group col-md-6">
       <label>Disciplina</label>
-      <select class="form-control">
+      <select #disciplinaFormacion="ngModel" name="disciplinaFormacion" [(ngModel)]="investigador.formacion.disciplina" class="form-control">
         <option value="Biólogos">Biólogos</option>
         <option value="Físicos">Físicos</option>
         <option value="Geólogos">Geólogos</option>
@@ -86,24 +86,27 @@
     </div>
   </div>
   <div>
-    <label>Títulos</label>
+    <label>Títulos ({{investigador.formacion.titulos.length}})</label>
     <div class="p-3">
-      <table class="table table-stripped table-bordered">
+      <table *ngIf="investigador.formacion.titulos.length > 0" class="table table-stripped table-bordered">
         <thead>
           <tr>
             <th>Tipo</th>
             <th>Titulación</th>
             <th>Disciplina</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Grado</td><td>Ingeniero</td><td>Ingenieros (civil, industria, informático)</td></tr>
+          <tr *ngFor="let titulo of investigador.formacion.titulos; let i = index">
+          <td>{{titulo.tipo}}</td><td>{{titulo.nombre}}</td><td>{{titulo.disciplina}}</td><td><button (click)="quitarTitulo(i)" class="btn btn-sm btn-secondary mt-1">Quitar</button></td>
+          </tr>
         </tbody>
       </table>
       <div class="form-row">
         <label class="col-sm-1 col-form-label">Título de grado</label>
         <div class="col-sm-3">
-          <select class="form-control" placeholder="Título de grado">
+          <select class="form-control" placeholder="Título de grado" #tituloGrado>
             <option value="PROFESOR">PROFESOR</option>
             <option value="PROFESOR">LICENCIADO</option>
             <option value="INGENIERO">INGENIERO</option>
@@ -115,7 +118,7 @@
         </div>
         <label class="col-sm-1 col-form-label">Disciplina</label>
         <div class="col-sm-5">
-          <select class="form-control" placeholder="Disciplina">
+          <select class="form-control" placeholder="Disciplina" #disciplinaTituloGrado>
             <option value="Biólogos">Biólogos</option>
             <option value="Físicos">Físicos</option>
             <option value="Geólogos">Geólogos</option>
@@ -153,14 +156,14 @@
           </select>
         </div>
         <div class="col-sm-2">
-          <button class="btn btn-secondary mt-1">Agregar Titulo de Grado</button>
+          <button (click)="agregarTitulo('Grado', tituloGrado.value, disciplinaTituloGrado.value)" class="btn btn-secondary mt-1">Agregar Titulo de Grado</button>
         </div>
       </div>
 
       <div class="form-row">
         <label class="col-sm-1 col-form-label">Título de posgrado</label>
         <div class="col-sm-3">
-          <select class="form-control" placeholder="Título de posgrado">
+          <select #tituloPosgrado class="form-control" placeholder="Título de posgrado">
             <option value="ESPECIALISTA">ESPECIALISTA</option>
             <option value="MASTER">MASTER</option>
             <option value="MAGISTER">MAGISTER</option>
@@ -169,7 +172,7 @@
         </div>
         <label class="col-sm-1 col-form-label">Disciplina</label>
         <div class="col-sm-5">
-          <select class="form-control" placeholder="Disciplina">
+          <select #disciplinaTituloPosgrado class="form-control" placeholder="Disciplina">
             <option value="Biólogos">Biólogos</option>
             <option value="Físicos">Físicos</option>
             <option value="Geólogos">Geólogos</option>
@@ -207,7 +210,7 @@
           </select>
         </div>
         <div class="col-sm-2">
-          <button class="btn btn-secondary mt-1">Agregar Titulo de Posgrado</button>
+          <button (click)="agregarTitulo('Posgrado',tituloPosgrado.value, disciplinaTituloPosgrado.value)" class="btn btn-secondary mt-1">Agregar Titulo de Posgrado</button>
         </div>
       </div>
 
@@ -289,9 +292,9 @@
     </div>
   </div>
   <div>
-    <label>Becas</label>
+    <label>Becas ({{investigador.investigacion.becas.length}})</label>
     <div class="p-3">
-      <table class="table table-stripped table-bordered">
+      <table *ngIf="investigador.investigacion.becas.length > 0" class="table table-stripped table-bordered">
         <thead>
           <tr>
             <th>Tipo</th>
@@ -299,24 +302,32 @@
             <th>Carrera desarrollada</th>
             <th>Fecha iniciación</th>
             <th>Fecha finalización</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Posgrado</td><td>Otras</td><td>Maestria</td><td>10-06-2016</td><td>10-06-2020</td></tr>
+          <tr *ngFor="let beca of investigador.investigacion.becas; let i = index">
+            <td>{{beca.tipo}}</td>
+            <td>{{beca.organismoOtorgante}}</td>
+            <td>{{beca.carreraDesarrollada}}</td>
+            <td>{{beca.fechaIniciacion}}</td>
+            <td>{{beca.fechaFinalizacion}}</td>
+            <td><button (click)="quitarBeca(i)" class="btn btn-sm btn-secondary mt-1">Quitar</button></td>
+          </tr>
         </tbody>
       </table>
 
     <div class="form-row">
       <label class="col-sm-2 col-form-label">Tipo Beca</label>
       <div class="col-sm-2">
-        <select class="form-control">
+        <select class="form-control" #tipoBeca>
           <option value="Iniciación">Iniciación</option>
           <option value="Posgrado">Posgrado</option>
         </select>
       </div>
       <label class="col-sm-2 col-form-label">Organismo otorgante</label>
       <div class="col-sm-2">
-        <select class="form-control" placeholder="Organismo otorgante">
+        <select class="form-control" #organismoOtorganteBeca placeholder="Organismo otorgante">
           <option value="CIN">CIN</option>
           <option value="UNDAV">UNDAV</option>
           <option value="CONICET">CONICET</option>
@@ -329,7 +340,7 @@
       </div>
       <label class="col-sm-2 col-form-label">Carrera desarrollada</label>
       <div class="col-sm-2">
-        <select class="form-control" placeholder="Carrera desarrollada">
+        <select class="form-control" #carreraDesarrolladaBeca placeholder="Carrera desarrollada">
           <option value="Carrera de grado">Carrera de grado</option>
           <option value="Especialización">Especialización</option>
           <option value="Maestría">Maestría</option>
@@ -341,14 +352,14 @@
     <div class="form-row">
       <label class="col-sm-2 col-form-label">Fecha iniciación</label>
       <div class="col-sm-2">
-        <input type="date" class="form-control"/>
+        <input type="date" #inicioBeca class="form-control"/>
       </div>
       <label class="col-sm-2 col-form-label">Fecha finalización</label>
       <div class="col-sm-2">
-        <input type="date" class="form-control"/>
+        <input type="date" #finBeca class="form-control"/>
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-secondary mt-1">Agregar beca</button>
+        <button (click)="agregarBeca(tipoBeca.value, organismoOtorganteBeca.value, carreraDesarrolladaBeca.value, inicioBeca.value, finBeca.value)" class="btn btn-secondary mt-1">Agregar beca</button>
       </div>
     </div>
     </div>
@@ -356,26 +367,33 @@
 
   <h4>Docencia</h4>
   <div>
-    <label>Cargos</label>
+    <label>Cargos ({{investigador.cargosDocentes.length}})</label>
     <div class="p-3">
-      <table class="table table-stripped table-bordered">
+      <table *ngIf="investigador.cargosDocentes.length" class="table table-stripped table-bordered">
         <thead>
           <tr>
             <th>Tipo</th>
             <th>Dedicación</th>
             <th>Radicación</th>
             <th>Contratación</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>JTP</td><td>Simple</td><td>Depto. Ambiente y Turismo</td><td>Contratado</td></tr>
+          <tr *ngFor="let cargo of investigador.cargosDocentes; let i = index">
+            <td>{{cargo.tipo}}</td>
+            <td>{{cargo.dedicacion}}</td>
+            <td>{{cargo.radicacion}}</td>
+            <td>{{cargo.tipoContratacion}}</td>
+            <td><button (click)="quitarCargo(i)" class="btn btn-sm btn-secondary mt-1">Quitar</button></td>
+          </tr>
         </tbody>
       </table>
 
     <div class="form-row">
       <label class="col-sm-1 col-form-label">Tipo</label>
       <div class="col-sm-2">
-        <select class="form-control">
+        <select #tipoCargo class="form-control">
           <option value="Ayudante Alumno">Ayudante Alumno</option>
           <option value="Ayudante 1">Ayudante 1</option>
           <option value="JTP">JTP</option>
@@ -384,17 +402,17 @@
           <option value="Titular">Titular</option>
         </select>
       </div>
-      <label class="col-sm-2 col-form-label">Dedicacion</label>
-      <div class="col-sm-2">
-        <select class="form-control" placeholder="Dedicacion">
+      <label class="col-sm-1 col-form-label">Dedicacion</label>
+      <div class="col-sm-1">
+        <select class="form-control" #dedicacionCargo placeholder="Dedicacion">
           <option value="Simple">Simple</option>
           <option value="Semiexclusiva">Semiexclusiva</option>
           <option value="Exclusiva">Exclusiva</option>
         </select>
       </div>
-      <label class="col-sm-2 col-form-label">Radicacion</label>
+      <label class="col-sm-1 col-form-label">Radicacion</label>
       <div class="col-sm-2">
-        <select class="form-control" placeholder="Radicacion">
+        <select class="form-control" #radicacionCargo placeholder="Radicacion">
           <option value="Depto. Ambiente y Turismo">Depto. Ambiente y Turismo</option>
           <option value="Depto. Salud y Actividad Física">Depto. Salud y Actividad Física</option>
           <option value="Depto. Ciencias Sociales">Depto. Ciencias Sociales</option>
@@ -405,15 +423,28 @@
           <option value="Otros">Otros</option>
         </select>
       </div>
+      <label class="col-sm-1 col-form-label">Tipo Contratacion</label>
+      <div class="col-sm-2">
+        <select #contratacionCargo class="form-control">
+          <option value="Ad-Honorem">Ad-Honorem</option>
+          <option value="Contratado">Contratado</option>
+          <option value="Interino">Interino</option>
+          <option value="Regular/Concursado">Regular/Concursado</option>
+        </select>
+      </div>
       <div class="col-sm-1">
-        <button class="btn btn-secondary mt-1">Agregar cargo</button>
+        <button  (click)="agregarCargo(tipoCargo.value, dedicacionCargo.value, radicacionCargo.value, contratacionCargo.value)" class="btn btn-secondary mt-1">Agregar cargo</button>
       </div>
     </div>
 
     </div>
   </div>
-
-  <div>
-    <button class="btn btn-primary mt-1">Guardar</button>
+  <div class="form-group">
+    <label>Observaciones</label>
+    <textarea #nombres="ngModel" name="observaciones" [(ngModel)]="investigador.observaciones"  class="form-control"  rows="3"></textarea>
   </div>
 </form>
+
+<div>
+  <button class="btn btn-primary mt-1" (click)="guardar()">Guardar</button>
+</div>
